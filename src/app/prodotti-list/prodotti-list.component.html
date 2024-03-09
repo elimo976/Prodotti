@@ -7,8 +7,7 @@
           <h5>{{pr.category | uppercase}}</h5>
           <p>{{pr.description}}</p>
           <p>{{pr.price | currency:"€"}}</p>
-          <p [ngStyle]="pr.rating?.rate === 3 ? {'color': 'orange'} : (pr.rating?.rate! > 3 ? {'color': 'green'} : {'color': 'red'})">Rate: {{pr.rating?.rate}}</p>
-          <p>Count: {{pr.rating?.count}}</p>
+          <p [ngClass]="pr.rating?.rate === 3 ? ['orange'] : (pr.rating?.rate! > 3 ? ['green'] : ['red'])">Rate: {{pr.rating?.rate}}</p>          <p>Count: {{pr.rating?.count}}</p>
         </div>
       </div>
     </div>
