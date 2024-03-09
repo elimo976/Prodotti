@@ -1,0 +1,15 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let pr of prodotti">
+      <div class="card">
+        <img [src]="pr.image" class="card-img-top" alt="..." *ngIf="pr.rating?.rate!>=3">
+        <div class="card-body">
+          <h4 class="card-title">{{pr.id}} - {{pr.title}}</h4>
+          <h5>{{pr.category | uppercase}}</h5>
+          <p>{{pr.description}}</p>
+          <p>{{pr.price | currency:"€"}}</p>
+          <p [ngStyle]="pr.rating?.rate === 3 ? {'color': 'orange'} : (pr.rating?.rate! > 3 ? {'color': 'green'} : {'color': 'red'})">Rate: {{pr.rating?.rate}}</p>
+          <p>Count: {{pr.rating?.count}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
